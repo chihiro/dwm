@@ -769,8 +769,7 @@ drawbar(Monitor *m) {
 	if((dc.w = dc.x - x) > bh) {
 		dc.x = x;
 		if(m->sel) {
-			col = m == selmon ? dc.sel : dc.norm;
-			drawtext(m->sel->name, col, False);
+			drawtext(m->sel->name, dc.norm, False);
 			drawsquare(m->sel->isfixed, m->sel->isfloating, False, col);
 		}
 		else
