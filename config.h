@@ -1,21 +1,22 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char font[]            = "Fira Mono 9"; 
-static const char normbordercolor[] = "#081820";
-static const char normbgcolor[]     = "#081820";
-static const char normfgcolor[]     = "#e0f8d0";
-static const char selbordercolor[]  = "#306850";
-static const char selbgcolor[]      = "#306850";
-static const char selfgcolor[]      = "#e0f8d0";
-static const unsigned int borderpx  = 4;        /* border pixel of windows */
+static const char font[]            = "Fira Sans Medium 8"; 
+static const char dmenufont[]       = "Fira Sans Medium:size=8";
+static const char normbordercolor[] = "#2b303b";
+static const char normbgcolor[]     = "#2b303b";
+static const char normfgcolor[]     = "#c0c5ce";
+static const char selbordercolor[]  = "#ebcb8b";
+static const char selbgcolor[]      = "#ebcb8b";
+static const char selfgcolor[]      = "#2b303b";
+static const unsigned int borderpx  = 8;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 static const Bool statusmarkup      = True;     /* True means use pango markup in status message */
 
 /* tagging */
-static const char *tags[] = { "surf", "talk", "code", "term", "misc" };
+static const char *tags[] = { "/", "//", "///", "////", "/////" };
 
 static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
@@ -29,9 +30,9 @@ static const Bool resizehints = False; /* True means respect size hints in tiled
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
+	{ "⊞",      tile },    /* first entry is default */
+	{ "⊡",      NULL },    /* no layout function means floating behavior */
+	{ "⊠",      monocle },
 };
 
 /* key definitions */
@@ -46,7 +47,7 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenucmd[] = { "dmenu_run", "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "urxvt", NULL };
 
 static Key keys[] = {
